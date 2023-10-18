@@ -3,14 +3,14 @@ import axios from 'axios';
 import { v1 as uuid } from 'uuid';
 
 function useAxios(url) {
-    const [items, setItems] = useState([]);
+    const [data, setData] = useState([]);
 
-    const addItem = async () => {
-        const response = await axios.get(url);
-        setItems((items) => [...items, { ...response.data, id: uuid() }]);
+    const addData = async (endpoint = '') => {
+        const response = await axios.get(`${url}${endpoint}`);
+        setData((oldData) => [...oldData, { ...response.data, id: uuid() }]);
     };
 
-    return [items, addItem];
+    return [data, addData];
 }
 
 export default useAxios;
