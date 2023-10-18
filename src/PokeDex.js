@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-//import {v1 as uuid} from "uuid";
-//import axios from "axios";
+import React from 'react';
 import useAxios from './hooks/useAxios';
 import PokemonSelect from './PokemonSelect';
 import PokemonCard from './PokemonCard';
